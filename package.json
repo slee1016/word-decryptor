@@ -1,0 +1,41 @@
+{
+  "name": "word-decryptor",
+  "version": "1.0.0",
+  "description": "Word decryption game with underlying Mastermind logic",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/index.js",
+    "dev-build": "webpack -d --watch",
+    "build": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slee1016/word-mastermind.git"
+  },
+  "author": "Sujin Lee",
+  "license": "ISC",
+  "homepage": "https://github.com/slee1016/word-mastermind",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "jquery": "^3.3.1",
+    "mongoose": "^5.4.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.9",
+    "random-english-words": "^0.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
