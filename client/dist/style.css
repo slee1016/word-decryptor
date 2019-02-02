@@ -11,9 +11,9 @@
     font-size: 16px;
     margin: 10px;
     margin-right: 0px;
-    background-color: rgb(17, 184, 17);
+    background-color: purple;
     color: #FFF;
-    border: 2px rgb(17, 184, 17);
+    border: 2px purple;
   }
 
   .guessListMain .header button:hover {
@@ -60,7 +60,7 @@
 
   .instructions {
     margin-top: 14px;
-    color: blue;
+    color: mediumturquoise;
     /* text-align: center */
   }
 
