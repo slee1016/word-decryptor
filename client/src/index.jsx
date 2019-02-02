@@ -11,7 +11,7 @@ class App extends React.Component {
     return (
       <div className="app greeting">Welcome to Code Decryptor! Think you have what it takes to crack the code??
       <div className="instructions">
-        How to play: Guess the four-letter word!
+        How to play: Guess the four-letter word within 10 tries!
         <div className="x">
           X's indicate: right letter, right position
         <div className="o">
