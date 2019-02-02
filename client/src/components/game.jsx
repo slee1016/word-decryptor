@@ -1,10 +1,9 @@
 import React from 'react';
-// import GuessList from './guessList.jsx';
 import GuessItems from "./guessItems.jsx";
 
 var randomWords = require('random-english-words');
 
-class Submit extends React.Component {
+class Game extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -36,7 +35,6 @@ class Submit extends React.Component {
       e.preventDefault();
 
       let res = this.compare();
-
       this.declareWinner();
       this.declareLoser();
 
@@ -49,10 +47,12 @@ class Submit extends React.Component {
 
       let test = this.state.guesses.slice();
       test.push([newGuess, res]);
-      this.setState({
-        guesses : test
+      this.setState({ 
+        guesses : test,
+        guess: ''
       });
 
+      //reset
       this._inputElement.value = "";
       res = [];
       
@@ -67,15 +67,12 @@ class Submit extends React.Component {
       for (var i = 0; i < code.length; i++) {
         if (guess[i] === code[i]) {
           results.push('X');
-          // insertFull();
         }
       }
-
       //Check if there are any letters that are the right letter in the wrong place
       for (var j = 0; j < code.length; j++) {
         if (code.indexOf(guess[j]) !== -1 && guess[j] !== code[j]) {
           results.push('0');
-          // insertHalf();
         }
       }
       return results;
@@ -95,11 +92,11 @@ class Submit extends React.Component {
     }
 
     declareLoser() {
-      if (this.state.guess !== this.state.correctAnswer && this.state.guesses.length === 4) {
-        function sayWinner() {
-          alert('You lost!')
+      if (this.state.guess !== this.state.correctAnswer && this.state.guesses.length === 6) {
+        function sayLoser() {
+          alert('You lost!\nThe code was: ' + this.state.correctAnswer)
         }
-        setTimeout(sayWinner, 500)
+        setTimeout(sayLoser, 500)
       } 
     }
 
@@ -120,4 +117,4 @@ class Submit extends React.Component {
     }
 }
 
-export default Submit;
+export default Game;
