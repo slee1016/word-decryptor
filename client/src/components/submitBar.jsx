@@ -25,6 +25,15 @@ class Submit extends React.Component {
       // return word.split('');
     }
 
+    // guessContains() {
+    //   for (let i = 0; i < 10; i++) {
+    //     this.state.guesses.push({
+    //       marks: [0, 0, 0, 0],
+    //       inputs: [0, 0, 0, 0]
+    //     })
+    //   }
+    // }
+
     handleChange(e) {
       this.setState({
         guess: e.target.value
@@ -32,34 +41,55 @@ class Submit extends React.Component {
     }
     
     handleSubmit(e) {
-      // this.compare();
-      
+      e.preventDefault();
+      let res = this.compare();
       if (this._inputElement.value !== "") {
         var newGuess = {
           text: this._inputElement.value,
           key: Date.now()
         };
       }
-      this.setState((prevState) => {
-        return {
-          guesses: prevState.guesses.concat(newGuess)
-        };
+      let test = this.state.guesses.slice()
+      test.push([newGuess, res])
+      this.setState({
+        guesses : test
       });
 
       this._inputElement.value = "";
-      e.preventDefault();
+      
     }
 
+    // compare() {
+    //   if (this.state.guess === this.state.correctAnswer) {
+    //     this.setState({
+    //       hasWon: !this.state.hasWon
+    //     },()=>{
+    //       alert('You won!');
+    //     });
+    //   } 
+    // }
     compare() {
-      if (this.state.guess === this.state.correctAnswer) {
-        this.setState({
-          hasWon: !this.state.hasWon
-        },()=>{
-          alert('You won!')
-        });
-        
-        
-      } 
+      var guess = this.state.guess.slice(0).split('');
+      var code = this.state.correctAnswer.slice(0).split('');
+      var results = [];
+
+      //Check if there are any letters that are the right letter in the right place
+      for (var i = 0; i < code.length; i++) {
+        if (guess[i] === code[i]) {
+          results.push('X');
+          // insertFull();
+        }
+      }
+
+      //Check if there are any letters that are the right letter in the wrong place
+      for (var j = 0; j < code.length; j++) {
+        if (code.indexOf(guess[j]) !== -1) {
+          results.push('0');
+          // insertHalf();
+        }
+      }
+
+      return results;
     }
 
     render() {
