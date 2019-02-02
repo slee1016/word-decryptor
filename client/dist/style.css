@@ -1,0 +1,77 @@
+
+.guessListMain .header input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid black;
+    width: 165px;
+  }
+
+  .guessListMain .header button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    margin-right: 0px;
+    background-color: rgb(17, 184, 17);
+    color: #FFF;
+    border: 2px rgb(17, 184, 17);
+  }
+
+  .guessListMain .header button:hover {
+    background-color: rgba(6, 154, 212, 0.726);
+    border: 2px solid rgba(6, 154, 212, 0.726);
+    cursor: pointer;
+  }
+
+  .guessListMain .theList {
+    list-style: none;
+    padding-left: 0;
+    width: 300px;
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto; */
+  } 
+
+  .guessListMain .theList li {
+    color: #333;
+    background-color: mediumturquoise;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    list-style: none;
+    text-align: left;
+    
+  }
+  
+  ul.theList {
+    padding: 0;
+  }
+
+  .greeting {
+    color: rgb(199, 15, 199);
+    font-size: 24px;
+    /* text-align: center; */
+  }
+
+  .symbol {
+    color: white;
+    text-align: right;
+    margin-left: 30px;
+  }
+
+  .instructions {
+    margin-top: 14px;
+    color: blue;
+    /* text-align: center */
+  }
+
+  .o {
+    color: red;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .x {
+    color: red;
+    font-size: 20px;
+    margin-left: 30px;
+  }

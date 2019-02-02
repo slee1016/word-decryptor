@@ -1,17 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-import GameLogic from './components/gameLogic.jsx';
-import Submit from './components/submitBar.jsx'
+import Game from './components/game.jsx';
 
 class App extends React.Component {
-
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
-      <div className="app">Hello Master Decryptors!
-      <Submit />
-      <div>Results: {this.compare}
-          </div>
+      <div className="app greeting">Welcome to Code Decryptor! Think you have what it takes to crack the code??
+      <div className="instructions">
+        How to play: Guess the four-letter word!
+        <div className="x">
+          X's indicate: right letter, right position
+        <div className="o">
+          O's indicate: right letter, wrong position
+      </div>
+        </div>
+        </div>
+        <Game />
       </div>
     );
   }

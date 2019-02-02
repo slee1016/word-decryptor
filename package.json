@@ -11,11 +11,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/slee1016/word-mastermind.git"
+    "url": "https://github.com/slee1016/word-decryptor.git"
   },
   "author": "Sujin Lee",
   "license": "ISC",
-  "homepage": "https://github.com/slee1016/word-mastermind",
+  "homepage": "https://github.com/slee1016/word-decryptor",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
