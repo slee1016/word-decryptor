@@ -3,7 +3,7 @@ import React from "react";
 class GuessItems extends React.Component {
   createGuesses(guess) {
     return <li key={guess.key}>{guess[0].text} {guess[1].map(item => {
-        return <span>{item}</span>
+        return <span className="symbol">{item}</span>
     })}</li>
   }
 
