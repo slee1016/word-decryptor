@@ -85,18 +85,18 @@ class Game extends React.Component {
         });
 
         function sayWinner() {
-          alert('You won!')
+          alert(`You're no longer on my grievance list!`)
         }
         setTimeout(sayWinner, 500)
       } 
     }
 
     declareLoser() {
-      if (this.state.guess !== this.state.correctAnswer && this.state.guesses.length === 6) {
+      if (this.state.guess !== this.state.correctAnswer && this.state.guesses.length === 9) {
         function sayLoser() {
-          alert('You lost!\nThe code was: ' + this.state.correctAnswer)
+          alert('You failed!\nThe code was: ' + this.state.correctAnswer)
         }
-        setTimeout(sayLoser, 500)
+        setTimeout(sayLoser.bind(this), 500)
       } 
     }
 
