@@ -13,9 +13,9 @@ class App extends React.Component {
       <div className="instructions">
         How to play: Guess the four-letter word within 10 tries!
         <div className="x">
-          X's indicate: right letter, right position
+          X's indicate: Letter is in the correct position
         <div className="o">
-          O's indicate: right letter, wrong position
+          O's indicate: Letter is in the wrong position
       </div>
         </div>
         </div>
