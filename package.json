@@ -17,25 +17,25 @@
   "license": "ISC",
   "homepage": "https://github.com/slee1016/word-decryptor",
   "dependencies": {
-    "axios": "^0.18.0",
-    "body-parser": "^1.18.3",
-    "compression": "^1.7.3",
-    "express": "^4.16.4",
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
     "fs": "0.0.1-security",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.1",
     "mongoose": "^5.4.0",
     "morgan": "^1.9.1",
-    "nodemon": "^1.18.9",
+    "nodemon": "^2.0.2",
     "random-english-words": "^0.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.3",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.4",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "webpack": "^4.28.1",
-    "webpack-cli": "^3.1.2"
+    "@babel/core": "^7.8.0",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   }
 }
