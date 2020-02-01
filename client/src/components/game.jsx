@@ -1,7 +1,7 @@
 import React from 'react';
 import GuessItems from "./guessItems.jsx";
 
-var randomWords = require('random-english-words');
+const randomWords = require('random-english-words');
 
 class Game extends React.Component {
     constructor(props) {
@@ -21,7 +21,7 @@ class Game extends React.Component {
     }
 
     generateCode() {
-      var word = randomWords({minChars: 4, maxChars: 4});
+      const word = randomWords({minChars: 4, maxChars: 4});
       return word;
     }
 
@@ -59,18 +59,18 @@ class Game extends React.Component {
     }
 
     compare() {
-      var guess = this.state.guess.slice(0).split('');
-      var code = this.state.correctAnswer.slice(0).split('');
-      var results = [];
+      const guess = this.state.guess.slice(0).split('');
+      const code = this.state.correctAnswer.slice(0).split('');
+      let results = [];
 
       //Check if there are any letters that are the right letter in the right place
-      for (var i = 0; i < code.length; i++) {
+      for (let i = 0; i < code.length; i++) {
         if (guess[i] === code[i]) {
           results.push('X');
         }
       }
       //Check if there are any letters that are the right letter in the wrong place
-      for (var j = 0; j < code.length; j++) {
+      for (let j = 0; j < code.length; j++) {
         if (code.indexOf(guess[j]) !== -1 && guess[j] !== code[j]) {
           results.push('0');
         }
@@ -85,9 +85,9 @@ class Game extends React.Component {
         });
 
         function sayWinner() {
-          alert(`You're no longer on my grievance list!`)
+          alert(`You cracked the code!`)
         }
-        setTimeout(sayWinner, 500)
+        setTimeout(sayWinner, 300)
       } 
     }
 
