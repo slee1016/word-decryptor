@@ -34,27 +34,38 @@ class Game extends React.Component {
     handleSubmit(e) {
       e.preventDefault();
 
-      let res = this.compare();
+      let clues = this.compare();
       this.declareWinner();
       this.declareLoser();
 
-      if (this._inputElement.value !== "") {
+      if (this._inputElement.value.length === 4) {  
         var newGuess = {
           text: this._inputElement.value,
           key: Date.now()
-        };
+        }
+      } else {
+        function sayError() {
+          alert('Please submit a four-letter word!');
+        }
+        setTimeout(sayError.bind(this), 500);
+        
+        //keep state unchanged
+        this.state = {
+          guess: guess,
+          guesses: guesses
+        }
       }
-
-      let test = this.state.guesses.slice();
-      test.push([newGuess, res]);
+      //Update guesses
+      let guesses = this.state.guesses.slice();
+      guesses.unshift([newGuess, clues]);
       this.setState({ 
-        guesses : test,
+        guesses : guesses,
         guess: ''
       });
 
-      //reset
+      //Reset
       this._inputElement.value = "";
-      res = [];
+      clues = [];
       
     }
 
@@ -63,13 +74,13 @@ class Game extends React.Component {
       const code = this.state.correctAnswer.slice(0).split('');
       let results = [];
 
-      //Check if there are any letters that are the right letter in the right place
+      //Check if any letters are in the right place
       for (let i = 0; i < code.length; i++) {
         if (guess[i] === code[i]) {
           results.push('X');
         }
       }
-      //Check if there are any letters that are the right letter in the wrong place
+      //Check if any letters exist in word but in the wrong place
       for (let j = 0; j < code.length; j++) {
         if (code.indexOf(guess[j]) !== -1 && guess[j] !== code[j]) {
           results.push('0');
